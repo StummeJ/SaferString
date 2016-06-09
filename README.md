@@ -1,0 +1,2 @@
+# SaferString
+Safer string operations.
