@@ -39,7 +39,7 @@ namespace SaferString
         /// </summary>
         /// <param name="secureValue">The value to act apon.</param>
         /// <param name="lambda">The delegate to execute.</param>
-        /// <returns>The <seealso cref="T"/> returned from the delegate.</returns>
+        /// <returns>The <see cref="Lambda{T}"/> returned from the delegate.</returns>
         /// <remarks>
         /// This does not prevent you from extracting the unecrypted string.  This is 
         /// ment to allow executing code based on the unencrypted string but not copy
