@@ -8,7 +8,7 @@ branches:
 install:
   - nuget restore
 build:
-  verbosity: detailed
+  verbosity: normal
 artifacts:
 - path: '**/SaferString.*.nupkg'
   name: NuGet Package
