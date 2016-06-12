@@ -11,3 +11,7 @@ THIS WAS BORN OUT OF A SECURITY RESEARCH PROJECT OF MINE.  **I HOLD NO RESPONSIB
 [![AppVeyor branch](https://img.shields.io/appveyor/ci/StummeJ/saferstring/develop.svg?maxAge=2592000)](https://ci.appveyor.com/project/StummeJ/saferstring/history)  
 [![GitHub release](https://img.shields.io/github/release/StummeJ/SaferString.svg?maxAge=2592000)](https://github.com/StummeJ/SaferString)
 [![NuGet](https://img.shields.io/nuget/v/SaferString.svg?maxAge=2592000)](https://www.nuget.org/packages/SaferString)
+
+
+## Contributing
+Please feel free to contribute to this project.  You can do so by making a fork and submitting a Pull Request.  Currently I have not played with `x64` and if you need support please open a `Issue` or `Pull Request`.
