@@ -6,9 +6,11 @@ THIS WAS BORN OUT OF A SECURITY RESEARCH PROJECT OF MINE.  **I HOLD NO RESPONSIB
 
 
 [![Master branch](https://img.shields.io/badge/Branch-Master-blue.svg)]()
-[![AppVeyor branch](https://img.shields.io/appveyor/ci/StummeJ/saferstring/master.svg?maxAge=2592000)](https://ci.appveyor.com/project/StummeJ/saferstring/history)  
+[![AppVeyor branch](https://img.shields.io/appveyor/ci/StummeJ/saferstring/master.svg?maxAge=2592000)](https://ci.appveyor.com/project/StummeJ/saferstring/history)
+[![Coveralls branch](https://img.shields.io/coveralls/StummeJ/SaferString/master.svg?maxAge=2592000)](https://coveralls.io/github/StummeJ/SaferString)  
 [![Develop branch](https://img.shields.io/badge/Branch-Develop-blue.svg)]()
-[![AppVeyor branch](https://img.shields.io/appveyor/ci/StummeJ/saferstring/develop.svg?maxAge=2592000)](https://ci.appveyor.com/project/StummeJ/saferstring/history)  
+[![AppVeyor branch](https://img.shields.io/appveyor/ci/StummeJ/saferstring/develop.svg?maxAge=2592000)](https://ci.appveyor.com/project/StummeJ/saferstring/history)
+[![Coveralls branch](https://img.shields.io/coveralls/StummeJ/SaferString/develop.svg?maxAge=2592000)](https://coveralls.io/github/StummeJ/SaferString)   
 [![GitHub release](https://img.shields.io/github/release/StummeJ/SaferString.svg?maxAge=2592000)](https://github.com/StummeJ/SaferString)
 [![NuGet](https://img.shields.io/nuget/v/SaferString.svg?maxAge=2592000)](https://www.nuget.org/packages/SaferString)
 
