@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.swp
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -250,3 +251,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.DS_Store
