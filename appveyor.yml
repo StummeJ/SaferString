@@ -37,7 +37,7 @@
     api_key:
       secure: yVcC9zUQ6Xenpgqa4u8YYZ+5Fva1PlkB5rwpfxb1yziyQheqrFow7u6LGZY9wsWI
     skip_symbols: true
-    artifact: '**/SaferString.*.nupkg'
+    artifact: NuGet Package
 -
   branches:
     only:
