@@ -14,6 +14,7 @@ THIS WAS BORN OUT OF A SECURITY RESEARCH PROJECT OF MINE.  **I HOLD NO RESPONSIB
 [![GitHub release](https://img.shields.io/github/release/StummeJ/SaferString.svg?maxAge=600)](https://github.com/StummeJ/SaferString)
 [![NuGet](https://img.shields.io/nuget/v/SaferString.svg?maxAge=600)](https://www.nuget.org/packages/SaferString)
 
+[![Documentation](https://img.shields.io/badge/Documentation-v1.1-brightgreen.svg)](https://docs.stumme.net/SaferString/)
 
 ## Contributing
 Please feel free to contribute to this project.  You can do so by making a fork and submitting a Pull Request.  Currently I have not played with `x64` and if you need support please open a `Issue` or `Pull Request`.
