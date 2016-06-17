@@ -15,7 +15,7 @@ namespace SaferString
         /// <param name="value">The value to convert.</param>
         /// <returns>A <see cref="SecureString"/> with the value encrypted.</returns>
         /// <remarks>
-        /// This does not solve all issues with having sensative in a string
+        /// This does not solve all issues with having sensitive in a string
         /// in the first place.  This <b>ONLY</b> reduces the attack service.
         /// As part of that the original string will be <b>ERASED</b> with
         /// Zeros.
@@ -44,7 +44,7 @@ namespace SaferString
         /// <summary>
         /// Erases a <see cref="String"/>.
         /// </summary>
-        /// <param name="value">The value to be erased.</param>
+        /// <param name="value">The value to be zeroed.</param>
         [SecuritySafeCritical]
         public static void Zero(this string value)
         {

@@ -38,9 +38,10 @@ namespace SaferString
         /// a controlled manor and return a derived value.
         /// </summary>
         /// <param name="secureValue">The value to act upon.</param>
-        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>/.</param>
+        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>.</param>
         /// <param name="args">Arguments for the delegate.</param>
-        /// <returns>The <see cref="Lambda{T}"/> returned from the delegate.</returns>
+        /// <typeparam name="T">The return type from the <see cref="Delegate"/>.</typeparam>
+        /// <returns>The value returned from the delegate.</returns>
         /// <remarks>
         /// This does not prevent you from extracting the unencrypted string.  This is 
         /// meant to allow executing code based on the unencrypted string but not copy
@@ -77,8 +78,8 @@ namespace SaferString
         /// Allows executing code against a <see cref="SecurityElement"/> in
         /// a controlled manor and return a derived value.
         /// </summary>
-        /// <param name="secureValue">The value to act apron.</param>
-        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>/.</param>
+        /// <param name="secureValue">The value to act upon.</param>
+        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>.</param>
         /// <param name="args">Arguments for the delegate.</param>
         /// <remarks>
         /// This does not prevent you from extracting the unencrypted string.  This is 
