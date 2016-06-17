@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NuGetPack", ".NuGetPack", 
 		.NuGetPack\NuGetPack.exe = .NuGetPack\NuGetPack.exe
 	EndProjectSection
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SaferString.Docs", "SaferString.Docs\SaferString.Docs.shfbproj", "{70175239-00B8-4F84-A1C6-0A7286F7C59F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,14 @@ Global
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|x64.ActiveCfg = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|x64.Build.0 = Release|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Debug|x64.Build.0 = Debug|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Release|x64.ActiveCfg = Release|Any CPU
+		{70175239-00B8-4F84-A1C6-0A7286F7C59F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
