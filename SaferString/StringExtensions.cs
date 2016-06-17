@@ -46,7 +46,7 @@ namespace SaferString
         /// </summary>
         /// <param name="value">The value to be erased.</param>
         [SecuritySafeCritical]
-        public static void EraseString(this string value)
+        public static void Zero(this string value)
         {
             if (value == null)
                 throw new ArgumentNullException(nameof(value));

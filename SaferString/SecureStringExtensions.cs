@@ -35,17 +35,18 @@ namespace SaferString
 
         /// <summary>
         /// Allows executing code against a <see cref="SecurityElement"/> in
-        /// a controlled mannor and return a derived value.
+        /// a controlled manor and return a derived value.
         /// </summary>
-        /// <param name="secureValue">The value to act apon.</param>
-        /// <param name="lambda">The delegate to execute.</param>
+        /// <param name="secureValue">The value to act upon.</param>
+        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>/.</param>
+        /// <param name="args">Arguments for the delegate.</param>
         /// <returns>The <see cref="Lambda{T}"/> returned from the delegate.</returns>
         /// <remarks>
-        /// This does not prevent you from extracting the unecrypted string.  This is 
-        /// ment to allow executing code based on the unencrypted string but not copy
+        /// This does not prevent you from extracting the unencrypted string.  This is 
+        /// meant to allow executing code based on the unencrypted string but not copy
         /// the unencrypted string.
         /// 
-        /// Thing such as string format, string concatenation, and string buildars
+        /// Thing such as string format, string concatenation, and string builders
         /// are a few things that can and will leak the unencrypted string.
         /// 
         /// <b>The original unencrypted string will be erased after the delegate has
@@ -53,20 +54,20 @@ namespace SaferString
         /// of this method.</b>
         /// </remarks>
         [SecuritySafeCritical]
-        public static T Lambda<T>(this SecureString secureValue, Func<String, T> lambda)
+        public static T Lambda<T>(this SecureString secureValue, Delegate lambda, params object[] args)
         {
             var handle = default(GCHandle);
             try
             {
                 handle = GCHandle.Alloc(secureValue.ToUnsecureString(), GCHandleType.Pinned);
-                var results = lambda(handle.Target as String);
+                var results = (T) lambda.DynamicInvoke(BuildLambdaArgs(handle, args));
                 return results;
             }
             finally
             {
                 if (handle != default(GCHandle))
                 {
-                    (handle.Target as String)?.EraseString();
+                    (handle.Target as String)?.Zero();
                     handle.Free();
                 }
             }
@@ -74,16 +75,17 @@ namespace SaferString
 
         /// <summary>
         /// Allows executing code against a <see cref="SecurityElement"/> in
-        /// a controlled mannor and return a derived value.
+        /// a controlled manor and return a derived value.
         /// </summary>
-        /// <param name="secureValue">The value to act apon.</param>
-        /// <param name="lambda">The delegate to execute.</param>
+        /// <param name="secureValue">The value to act apron.</param>
+        /// <param name="lambda">The delegate to execute.  The first argument must be a <see cref="String"/>/.</param>
+        /// <param name="args">Arguments for the delegate.</param>
         /// <remarks>
-        /// This does not prevent you from extracting the unecrypted string.  This is 
-        /// ment to allow executing code based on the unencrypted string but not copy
+        /// This does not prevent you from extracting the unencrypted string.  This is 
+        /// meant to allow executing code based on the unencrypted string but not copy
         /// the unencrypted string.
         /// 
-        /// Thing such as string format, string concatenation, and string buildars
+        /// Thing such as string format, string concatenation, and string builders
         /// are a few things that can and will leak the unencrypted string.
         /// 
         /// <b>The original unencrypted string will be erased after the delegate has
@@ -91,22 +93,31 @@ namespace SaferString
         /// of this method.</b>
         /// </remarks>
         [SecuritySafeCritical]
-        public static void Lambda(this SecureString secureValue, Action<String> lambda)
+        public static void Lambda(this SecureString secureValue, Delegate lambda, params object[] args)
         {
             var handle = default(GCHandle);
             try
             {
                 handle = GCHandle.Alloc(secureValue.ToUnsecureString(), GCHandleType.Pinned);
-                lambda(handle.Target as String);
+                lambda.DynamicInvoke(BuildLambdaArgs(handle, args));
             }
             finally
             {
                 if (handle != default(GCHandle))
                 {
-                    (handle.Target as String)?.EraseString();
+                    (handle.Target as String)?.Zero();
                     handle.Free();
                 }
             }
+        }
+
+        [SecurityCritical]
+        private static object[] BuildLambdaArgs(GCHandle handle, params object[] args)
+        {
+            var lambdaArgs = new object[args.Length + 1];
+            lambdaArgs[0] = handle.Target as String;
+            Array.Copy(args, 0, lambdaArgs, 1, args.Length);
+            return lambdaArgs;
         }
     }
 }
