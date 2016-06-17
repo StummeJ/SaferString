@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="8aaaf432-9b3d-4217-b352-aa97d7bdb4db" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version v1.1
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>Renamed EraseString to Zero.</para>
+            <para>Re-factored Lambda to take in any number of parameters (BREAKING).</para>
+          </listItem>
+
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="6e090577-1e86-4dea-9ad6-61e31e87bfc2" />
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>
+

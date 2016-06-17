@@ -45,7 +45,7 @@ namespace SaferString.Tests
             // ReSharper disable once ConvertToConstant.Local
             var str = "We're going to Candy Mountain.";
             Assert.IsFalse(String.IsNullOrWhiteSpace(str));
-            str.EraseString();
+            str.Zero();
             Assert.IsTrue(String.IsNullOrWhiteSpace(str));
         }
 
@@ -54,7 +54,7 @@ namespace SaferString.Tests
         {
             const String str = "Tho shall not pass!";
             Assert.IsFalse(String.IsNullOrWhiteSpace(str));
-            str.EraseString();
+            str.Zero();
             Assert.IsTrue(String.IsNullOrWhiteSpace(str));
         }
 
@@ -66,14 +66,34 @@ namespace SaferString.Tests
             chr.ForEach(secStr.AppendChar);
             const int expectedValue = 0xBADBEF;
 
-            Func<String, int> lambda = delegate(String s)
+            Func<String, int> lambda = s =>
             {
                 if (s == "Llama")
                     return expectedValue;
                 return 0x0;
             };
 
-            var results = secStr.Lambda(lambda);
+            var results = secStr.Lambda<int>(lambda);
+
+            Assert.AreEqual(expectedValue, results);
+        }
+
+        [TestMethod]
+        public void Lambda__AllowsRunningArbitraryCodeAndParamsWithReturn()
+        {
+            var chr = new List<char> { 'L', 'l', 'a', 'm', 'a' };
+            var secStr = new SecureString();
+            chr.ForEach(secStr.AppendChar);
+            const int expectedValue = 0xBADBEF;
+
+            Func<String, int, int> lambda = (s, i) =>
+            {
+                if (s == "Llama")
+                    return i;
+                return 0x0;
+            };
+
+            var results = secStr.Lambda<int>(lambda, expectedValue);
 
             Assert.AreEqual(expectedValue, results);
         }
@@ -83,9 +103,11 @@ namespace SaferString.Tests
         {
             var cache = new List<String>();
             // ReSharper disable InconsistentNaming
+            // ReSharper disable ConvertToConstant.Local
             var expectedString_1 = "Secret";
             var expectedString_2 = "TopSecret";
             // ReSharper restore InconsistentNaming
+            // ReSharper restore ConvertToConstant.Local
 
             Action<String> lambda = delegate(String s)
             {
@@ -101,6 +123,36 @@ namespace SaferString.Tests
             chr.ForEach(secStr.AppendChar);
 
             secStr.Lambda(lambda);
+
+            CollectionAssert.Contains(cache, expectedString_1);
+            CollectionAssert.Contains(cache, expectedString_2);
+        }
+
+        [TestMethod]
+        public void Lambda__AllowsRunningArbitraryCodeAndParamsWithoutReturn()
+        {
+            var cache = new List<String>();
+            // ReSharper disable InconsistentNaming
+            // ReSharper disable ConvertToConstant.Local
+            var expectedString_1 = "Secret";
+            var expectedString_2 = "TopSecret";
+            // ReSharper restore InconsistentNaming
+            // ReSharper restore ConvertToConstant.Local
+
+            Action<String, String> lambda = (s, prefix) =>
+            {
+                var sb = new StringBuilder(2);
+                sb.Append(prefix);
+                sb.Append(s);
+                cache.Add($"{s}");
+                cache.Add(sb.ToString());
+            };
+
+            var chr = new List<char> { 'S', 'e', 'c', 'r', 'e', 't' };
+            var secStr = new SecureString();
+            chr.ForEach(secStr.AppendChar);
+
+            secStr.Lambda(lambda, "Top");
 
             CollectionAssert.Contains(cache, expectedString_1);
             CollectionAssert.Contains(cache, expectedString_2);

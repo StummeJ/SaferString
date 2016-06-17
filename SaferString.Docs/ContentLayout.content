@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="cc1af0e8-a878-4fc1-903f-579255bd1eff" visible="True" isDefault="true" title="Welcome to the SaferString extension docs">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="6e090577-1e86-4dea-9ad6-61e31e87bfc2" visible="True" isExpanded="true" title="Version History">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="version, history" />
+    </HelpKeywords>
+    <Topic id="1bf72ac7-e26b-4740-b798-e6600c05b409" visible="True" isSelected="true" title="Version 1.0">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 1.0" />
+      </HelpKeywords>
+    </Topic>
+    <Topic id="8aaaf432-9b3d-4217-b352-aa97d7bdb4db" visible="True" title="Version 1.1">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 1.1" />
+      </HelpKeywords>
+    </Topic>
+  </Topic>
+</Topics>
