@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString", "SaferString\SaferString.csproj", "{E278A905-2F45-4D94-B4D3-A91B4101A2C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString", "..\SaferString\SaferString.csproj", "{E278A905-2F45-4D94-B4D3-A91B4101A2C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString.Tests", "SaferString.Tests\SaferString.Tests.csproj", "{D8E6C938-7782-445A-87B1-6613D5118E3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString.Tests", "..\SaferString.Tests\SaferString.Tests.csproj", "{D8E6C938-7782-445A-87B1-6613D5118E3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B96E692-3159-49C7-88D9-5CE3D13BA3FA}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString.NuGet", "SaferString.NuGet\SaferString.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaferString.NuGet", "..\SaferString.NuGet\SaferString.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NuGetPack", ".NuGetPack", "{DF0FDE6D-BC35-4B18-82DA-F13EC1748B03}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NuGetPack", ".NuGetPack", 
 		.NuGetPack\NuGetPack.exe = .NuGetPack\NuGetPack.exe
 	EndProjectSection
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SaferString.Docs", "SaferString.Docs\SaferString.Docs.shfbproj", "{70175239-00B8-4F84-A1C6-0A7286F7C59F}"
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SaferString.Docs", "SaferString.Docs.shfbproj", "{70175239-00B8-4F84-A1C6-0A7286F7C59F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
